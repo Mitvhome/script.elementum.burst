@@ -1894,15 +1894,16 @@
         "tv_keywords2": "{title:en} {season:2}x{episode:2}",
         "tv_keywords_fallback": "{title:en} s{season:2}"
         {
-    "Tamilmv": {
-        "name": "Tamilmv",
+    "Solidtorrents": {
+        "name": "Solidtorrents",
         "enabled": true,
+        "predefined": false,
         "private": false,
         "languages": "en",
         "anime_extra": "",
         "anime_keywords": "{title:original} {episode}",
         "anime_query": "EXTRA",
-        "base_url": "https://www.1tamilmv.space/index.php?/search/&q=QUERY&quick=1",
+        "base_url": "https://solidtorrents.to/search?q=QUERY",
         "color": "FFF14E13",
         "general_extra": "",
         "general_keywords": "{title:original}",
@@ -1921,7 +1922,7 @@
             "row": "find_once(tag='tbody').find_all('tr')",
             "seeds": "item(tag='td', order=2)",
             "size": "item(tag='td', order=5)",
-            "torrent": "'https://www.1tamilmv.space%s' % item(tag='a', attribute='href', order=2)"
+            "torrent": "item(tag='a', select=('title', 'Download'), attribute='href', order=1).replace('/download/', '/torrent_download/')"
         },
         "season_extra": "",
         "season_extra2": "",
